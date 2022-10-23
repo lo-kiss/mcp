@@ -1,7 +1,7 @@
 const defaultColor = "#a51d2d";
 const cp = document.querySelector("#cp");
 const title = document.querySelector("#title");
-const label = document.querySelector(".label");
+const cpLabel = document.querySelector(".label");
 const inputs = document.querySelectorAll(".inputs");
 
 const hexIn = document.querySelector("#hex");
@@ -17,7 +17,7 @@ function startup()
     hslIn.value = hexToHsl(defaultColor);
 
     title.style.color = defaultColor;
-    label.style.color = defaultColor;
+    cpLabel.style.color = defaultColor;
     inputs.forEach(input => {
         input.style.borderColor = defaultColor;
     });
@@ -28,7 +28,7 @@ function startup()
 
 function update(event)
 {
-    cp.value = title.style.color = label.style.color = event.target.value;
+    cp.value = title.style.color = cpLabel.style.color = event.target.value;
     inputs.forEach(input => {
         input.style.borderColor = cp.value;
     });
