@@ -7,6 +7,7 @@
         <meta name="description" content="a very minimal web color picker">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="https://lo-kiss.github.io/style.css">
         <script src="bloat.js" defer></script>
     </head>
     <body>
@@ -18,9 +19,20 @@
           <label class="label" for="cp">Press the big rectangle (only hex input works for now)</label>
           <input id="cp" type="color" name="cp" value="#000000">
 
-          <input id="hex" class="inputs" type="text" name="hex" value="#000000">
-          <input id="rgb" class="inputs" type="text" name="rgb" value="rgb(0, 0, 0)">
-          <input id="hsl" class="inputs" type="text" name="hsl" value="hsl(0, 0%, 0%)">
+          <div>
+            <label for="hex">hex</label>
+            <input id="hex" class="inputs" type="text" name="hex" value="#000000">
+          </div>
+
+          <div>
+            <label for="rbg">rbg</label>
+            <input id="rgb" class="inputs" type="text" name="rgb" value="rgb(0, 0, 0)">
+          </div>
+
+          <div>
+            <label for="hsl">hsl</label>
+            <input id="hsl" class="inputs" type="text" name="hsl" value="hsl(0, 0%, 0%)">
+          </div>
 
           <noscript>
               <p><b class=hl>mcp needs J*vascript for functionality.</b></p>

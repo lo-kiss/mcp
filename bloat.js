@@ -13,7 +13,7 @@ window.addEventListener("load", startup, false);
 function startup()
 {
     cp.value = hexIn.value = defaultColor;
-    rgbIn.value = "rgb(" + hexToRgb(defaultColor) + ")";
+    rgbIn.value = hexToRgb(defaultColor);
     hslIn.value = hexToHsl(defaultColor);
 
     title.style.color = defaultColor;
@@ -34,7 +34,7 @@ function update(event)
     });
 
     hexIn.value = event.target.value;
-    rgbIn.value = "rgb(" + hexToRgb(cp.value) + ")";
+    rgbIn.value = hexToRgb(cp.value);
     hslIn.value = hexToHsl(cp.value);
 }
 
@@ -60,7 +60,6 @@ function hexToHsl(hex, valuesOnly = false)
     let r = parseInt(result[1], 16);
     let g = parseInt(result[2], 16);
     let b = parseInt(result[3], 16);
-    let cssString = '';
     r /= 255, g /= 255, b /= 255;
     let max = Math.max(r, g, b), min = Math.min(r, g, b);
     let h, s, l = (max + min) / 2;
@@ -86,7 +85,7 @@ function hexToHsl(hex, valuesOnly = false)
     l = Math.round(l * 100);
 
     cssString = h + ',' + s + '%,' + l + '%';
-    cssString = !valuesOnly ? 'hsl(' + cssString + ')' : cssString;
+    // cssString = !valuesOnly ? 'hsl(' + cssString + ')' : cssString;
 
     return cssString;
 }
