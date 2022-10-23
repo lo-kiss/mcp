@@ -3,6 +3,7 @@ const cp = document.querySelector("#cp");
 const title = document.querySelector("#title");
 const cpLabel = document.querySelector(".label");
 const inputs = document.querySelectorAll(".inputs");
+const hexMsg = document.querySelector("#hexMsg");
 
 const hexIn = document.querySelector("#hex");
 const rgbIn = document.querySelector("#rgb");
@@ -36,9 +37,16 @@ function update(event)
     hexIn.value = event.target.value;
     rgbIn.value = hexToRgb(cp.value);
     hslIn.value = hexToHsl(cp.value);
-}
 
-/* if value is hex return hex, if value is rgb convert hex rgb, if value is hsl convert hex to hsl */
+    if (hexIn.value.length < 7)
+    {
+        hexMsg.textContent = "Please use 6 digit hex codes";
+    }
+    else
+    {
+        hexMsg.textContent = "";
+    }
+}
 
 function listenEvent(func)
 {
